@@ -1,14 +1,59 @@
 // ----- Functions to implement -----
 
 // 1) myFunc(): persistent counter
+let counter = 0;
+function myFunc() {
+  counter++;
+  return counter;
+}
 
 // 2) getRandomNum(max): 1..max int or 0 if invalid
+function getRandomNum(max) {
+  max = Number(max);
+  if (!Number.isInteger(max) || max <= 0) {
+    return 0;
+  }
+  return Math.floor(Math.random() * max) + 1;
+}
 
 // 3) myAdder(x, y): numeric sum
+function myAdder(x, y) {
+  return Number(x) + Number(y);
+}
 
 // 4) distance(x1, y1, x2, y2): Euclidean distance
+function distance(x1, y1, x2, y2) {
+  x1 = Number(x1);
+  y1 = Number(y1);
+  x2 = Number(x2);
+  y2 = Number(y2);
+  return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+}
 
 // 5) quadratic(a, b, c): roots of ax^2 + bx + c = 0
+function quadratic(a, b, c) {
+  a = Number(a);
+  b = Number(b);
+  c = Number(c);
+  
+  const discriminant = b * b - 4 * a * c;
+  
+  if (discriminant > 0) {
+    // Two real roots
+    const root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+    const root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+    return [root1, root2];
+  } else if (discriminant === 0) {
+    // One root
+    const root = -b / (2 * a);
+    return [root];
+  } else {
+    // Complex roots
+    const realPart = -b / (2 * a);
+    const imaginaryPart = Math.sqrt(-discriminant) / (2 * a);
+    return [`${realPart}+${imaginaryPart}i`, `${realPart}-${imaginaryPart}i`];
+  }
+}
 
 
 // ----- Helpers -----
