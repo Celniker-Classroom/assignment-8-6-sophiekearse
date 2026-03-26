@@ -16,7 +16,7 @@ function getRandomNum(max) {
   return Math.floor(Math.random() * max) + 1;
 }
 
-// 3) myAdder(x, y): numeric sum
+
 function myAdder(x, y) {
   return Number(x) + Number(y);
 }
