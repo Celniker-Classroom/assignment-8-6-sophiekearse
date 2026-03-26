@@ -92,13 +92,3 @@ function onQuadraticClick() {
   const roots = quadratic(a, b, c);
   setText('outQuadratic', Array.isArray(roots) ? roots.join(', ') : roots);
 }
-
-let counter = 0;
-function myFunc(){
-counter ++;
-return counter;
-}
-
-function getRandomNum(max) {
-  
-}
