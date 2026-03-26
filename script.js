@@ -7,7 +7,7 @@ function myFunc() {
   return counter;
 }
 
-// 2) getRandomNum(max): 1..max int or 0 if invalid
+
 function getRandomNum(max) {
   max = Number(max);
   if (!Number.isInteger(max) || max <= 0) {
